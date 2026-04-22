@@ -15,15 +15,18 @@
     "build:linux": "electron-vite build && electron-builder --linux",
     "format": "oxfmt --write .",
     "lint": "oxlint .",
+    "lint-staged": "lint-staged",
+    "postinstall": "electron-builder install-app-deps",
+    "prepare": "husky",
     "tsc:check:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "tsc:check:web": "tsc --noEmit -p tsconfig.web.json --composite false",
-    "tsc:check": "npm run typecheck:node && npm run typecheck:web",
-    "postinstall": "electron-builder install-app-deps"
+    "tsc:check": "npm run tsc:check:node && npm run tsc:check:web"
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0",
-    "electron-updater": "^6.3.9"
+    "electron-updater": "^6.3.9",
+    "lint-staged": "^16.4.0"
   },
   "devDependencies": {
     "@electron-toolkit/tsconfig": "^2.0.0",
