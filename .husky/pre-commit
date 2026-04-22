@@ -1,2 +1,2 @@
-pnpm lint-staged
+pnpm s lint-staged
 pnpm tsc:check
